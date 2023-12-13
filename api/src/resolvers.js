@@ -5,13 +5,8 @@
 
 module.exports = {
   Query: {
-    pet(_, args, ctx) {
-      return {
-        id: "dog1",
-        createdAt: "2023-10-45",
-        name: "Lucky",
-        type: "DOG",
-      }
+    pets(initialValue, {input}, ctx, ast) {
+      return ctx.models.Pet.findMany()
     },
   },
   // Mutation: {},

@@ -16,9 +16,24 @@ const typeDefs = gql`
     type: String!
   }
 
+  input PetInput {
+    name: String
+    type: String
+  }
+
+  type Shoe {
+    brand: String!
+    size: Int!
+  }
+
+  input ShoeInput {
+    brand: String!
+    size: Int!
+  }
+
   type Query {
-    pets: [Pet]!
+    pets(input: PetInput): [Pet]!
   }
 `
 
-module.exports = typeDefs
+module.exports = typeDefsmodule.exports = typeDefs
